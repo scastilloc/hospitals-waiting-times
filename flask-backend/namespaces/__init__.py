@@ -12,10 +12,3 @@ api.add_namespace(illnesses_ns, path='/api/v1/illnesses')
 api.add_namespace(pain_levels_ns, path='/api/v1/painlevels')
 api.add_namespace(hospitals_ns, path='/api/v1/hospitals')
 api.add_namespace(patients_ns, path='/api/v1/patients')
-
-
-
-#api.add_resource(Illnesses, '/api/v1/illnesses')
-# api.add_resource(PainLevels, '/api/v1/painlevels')
-# api.add_resource(Hospitals, '/api/v1/hospitals')
-# api.add_resource(PatientInformation, '/api/v1/patients')

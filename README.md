@@ -32,5 +32,5 @@ bash scripts/run-api.sh
 
 ```shell
 cd react-frontend
-bash scripts/run-web.sh
+npm start
 ```
