@@ -1,0 +1,83 @@
+body {
+    font-family: Arial;
+    padding: 40px;
+    font-size: 16px;
+  }
+
+.main-container {
+    border-radius: 5px;
+    max-width: 600px;
+    background-color: #F5F5F5;
+} 
+
+.container-inner-div {
+    border-radius: 5px;
+    margin: 5px 5px 5px 5px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+} 
+
+.center {
+    margin: auto;
+    width: 50%;    
+    padding: 10px;
+  }
+
+.align-right {
+    width: 10%; 
+    margin-right: 0;
+    display: inline-block;
+}
+
+.align-left {
+    width: 90%;  
+    margin-left: 0;
+    display: inline-block;
+}
+
+.hosp-align-right {
+    width: 30%;   
+    margin-right: 0;
+    display: inline-block;
+}
+
+.hosp-align-left {
+    width: 70%;  
+    margin-left: 0;
+    display: inline-block;
+}
+
+.patient-align-right {
+    width: 50%;   
+    margin-right: 0;
+    display: inline-block;
+}
+
+
+.patient-align-left {
+    width: 50%;  
+    margin-left: 0;
+    display: inline-block;
+}
+.hand-pointer {
+    cursor: pointer;
+}
+
+
+.btn {
+    transition-duration: 0.4s;
+    margin: 5px 5px 5px 5px;
+    border-radius: 4px;
+    background-color: steelblue;
+    cursor: pointer;
+    border: none;  
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;        
+    font-size: 16px;
+  }
+  
+.btn:hover {     
+    color: white;    
+}
+
