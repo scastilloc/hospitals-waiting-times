@@ -6,12 +6,12 @@ class TestIllnesses():
     """
     def test_get_illnesses(self, client, app):            
         # Get /illnesses
-        response = client.get('/api/v1/illnesses')
+        response = client.get('/api/v1/illnesses/')
 
         # Validate response
         assert response.status_code == 200, 'Expected successful response'
         assert response.is_json, 'Expected application/json response'
         data = response.get_json()
-        expected_keys = ['illnesses', 'id', 'name']        
+        expected_keys = ['illnesses']        
         assert list(
-            data.keys()) == expected_keys, 'Expected only illnesses, id, name in response'
+            data.keys()) == expected_keys, 'Expected only illnesses in response'

@@ -15,18 +15,29 @@ parser.add_argument('pain_level', type=int, required=True,
 parser.add_argument('illness_id', type=int, required=True, 
 					help='Illness unique identificator')
 
+
+def validate_input(pain_level, illness_id, first_name, last_name):
+	if pain_level is None or illness_id is None or first_name is None or last_name is None:
+		return False
+	return True
+
+
+
 @api.route('')				
 class PatientInformation(Resource):
 	@api.expect(parser, validate=True)
 	def post(self):
 		args = parser.parse_args()
-		
+			
 		pain_level = args.get('pain_level')
 		illness_id = args.get('illness_id')
 		first_name = args.get('first_name')
 		last_name = args.get('last_name')
-		if not pain_level or not illness_id or not first_name or not last_name:
+		print(args)
+		if(not validate_input(pain_level, illness_id, first_name, last_name)):
 			api.abort(400, f'Patient information not complete')
+		
+
 		patient = Patient(first_name = first_name, last_name = last_name, pain_level = pain_level, illness_id = illness_id)
 		db.session.add(patient)
 		db.session.commit()
