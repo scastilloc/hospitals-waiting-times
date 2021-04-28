@@ -1,3 +1,10 @@
+/**
+* hospitals.component.js
+* 
+* Displays a list of hospitals related to the selected pain level.
+* Each hospital is sorted by average waiting time (lower to higher time)
+*/
+
 import React from 'react';
 import { useState, useEffect } from "react";
 import { Row, Col, Button } from "react-bootstrap";
@@ -11,6 +18,7 @@ export default function Hospitals() {
     const [isLoaded, setIsLoaded] = useState(false);    
     let history = useHistory();
 
+    // Calls the hospital API
     useEffect(() => {        
         fetch('/api/v1/hospitals?painlevel='+state.painLevel)
             .then((res) => {
@@ -26,6 +34,9 @@ export default function Hospitals() {
                 })
     },[state.painLevel]);
     
+    /* Returns formatted hours and minutes.
+       Input: total number of minutes
+     */
     function getTimeString(totalMins)
     { 
         const hours = Math.floor(totalMins / 60);  
@@ -43,6 +54,7 @@ export default function Hospitals() {
         return timeString;         
     }
 
+    
     const data = hospitals.map((hospital) => (
         <Row key={hospital.id}>
             <Col>                    

@@ -1,3 +1,9 @@
+/**
+* illnesses.component.js
+* 
+* Displays a list of pain levels.
+*/
+
 import React from 'react';
 import { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
@@ -16,6 +22,7 @@ export default function PainLevels() {
     const [painLevels, setPainLevels] = useState([]);
     const [isLoaded, setIsLoaded] = useState(true);
 
+    // Calls the pain levels API
     useEffect(() => {
         fetch('/api/v1/painlevels')
             .then((res) => {
@@ -42,6 +49,7 @@ export default function PainLevels() {
 
     };
 
+    // Creates a grid with pain levels and respective emojis.
     const data = painLevels.map((painLevel) => (     
         <Row key={painLevel.level}>
             <Col>

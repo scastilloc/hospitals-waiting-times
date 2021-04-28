@@ -1,3 +1,9 @@
+/**
+* illnesses.component.js
+* 
+* Displays a list of illnesses.
+*/
+
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
@@ -10,6 +16,7 @@ export default function Illnesses() {
     const [isLoaded, setIsLoaded] = useState(false);
     let history = useHistory();
 
+    // Calls the illnesses API
     useEffect(() => {
         fetch('/api/v1/illnesses')
             .then((res) => {
@@ -24,6 +31,7 @@ export default function Illnesses() {
                     setIsLoaded(true);
                 })
     },[]);
+
 
     const handleOnClick = (e) => {                
         e.preventDefault();

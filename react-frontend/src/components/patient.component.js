@@ -1,3 +1,10 @@
+/**
+* patient.component.js
+* 
+* Displays a form with selected level of pain, illness, and fields to
+* enter the patient's name. The information is stored in DB
+*/
+
 import React from 'react';
 import { useState } from "react";
 import { Form, Button,  Row, Col } from "react-bootstrap";
@@ -15,6 +22,7 @@ export default function Patient() {
     dataPost.append('pain_level', state.painLevel);
     dataPost.append('illness_id', state.illnessId);
 
+    // Calls patients API to store information in DB
     const handleSubmit = (e) => {
         e.preventDefault();        
         fetch("api/v1/patients", { body: dataPost, method: "POST" })
