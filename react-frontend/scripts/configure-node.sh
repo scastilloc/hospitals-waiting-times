@@ -10,4 +10,4 @@ nvm install 14.13.0
 npm config delete prefix
 npm config set prefix $NVM_DIR/versions/node/v14.13.0
 nvm use v14.13.0
-npm install --prefix web
+npm install
